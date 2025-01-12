@@ -54,7 +54,9 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/sun.glb  # Replace with your actual file name and path
+    - assets/sun.glb
+    - assets/images/
+    # Replace with your actual file name and path
 
   # To add assets to your application, add an assets section, like this:
   # assets:
