@@ -114,7 +114,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text('Explore', style: TextStyle(color: Colors.white)),
+        title: const Text('Explore the Solar System', style: TextStyle(color: Colors.white)),
       ),
       body: Column(
         children: [
@@ -290,6 +290,7 @@ class AstroCard extends StatelessWidget {
                     ),
                   ),
                   const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Icon(Icons.favorite_border, color: Colors.white70),
                       SizedBox(width: 8),

@@ -37,7 +37,6 @@ class ModelViewerScreen extends StatelessWidget {
             arModes: const ['scene-viewer', 'webxr', 'quick-look'],
             autoRotate: true,
             iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
-            disableZoom: true,
           ),
         ],
       ),
