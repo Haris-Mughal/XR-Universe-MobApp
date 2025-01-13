@@ -27,6 +27,13 @@ class AstroExplorerScreen extends StatefulWidget {
 class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
   final List<Map<String, dynamic>> astroData = [
     {
+      'title': 'Solar System',
+      'description': 'Our solar system is a collection of planets, moons, and small celestial bodies orbiting the Sun.',
+      'image': 'assets/images/solarsystem.png',
+      'color': Colors.grey,
+      'modelSrc': 'assets/models/solar_system.glb',
+    },
+    {
       'title': 'Mercury',
       'description':
       'Mercury is the smallest planet in the Solar System and the closest to the Sun. It has no atmosphere to retain heat.',

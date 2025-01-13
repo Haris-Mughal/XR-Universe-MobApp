@@ -6,7 +6,7 @@ class ModelViewerScreen extends StatelessWidget {
   const ModelViewerScreen({
     super.key,
     required this.modelSrc,
-     });
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +14,32 @@ class ModelViewerScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Model Viewer'),
       ),
-      body: ModelViewer(
-        backgroundColor: const Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
-        src: modelSrc,
-        alt: "Planet's model",
-        ar: true,
-        arModes: const ['scene-viewer', 'webxr', 'quick-look'],
-        autoRotate: true,
-        iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
-        disableZoom: true,
+      body: Stack(
+        children: [
+          // Background image with black overlay
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/background_image.png'), // Replace with your image path
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Container(
+              color: Colors.black.withOpacity(0.7), // Black overlay with 50% opacity
+            ),
+          ),
+          // ModelViewer
+          ModelViewer(
+            backgroundColor: Colors.transparent, // Make background transparent
+            src: modelSrc,
+            alt: "Planet's model",
+            ar: true,
+            arModes: const ['scene-viewer', 'webxr', 'quick-look'],
+            autoRotate: true,
+            iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
+            disableZoom: true,
+          ),
+        ],
       ),
     );
   }
