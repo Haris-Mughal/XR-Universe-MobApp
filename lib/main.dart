@@ -30,7 +30,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'title': 'Solar System',
       'description': 'Our solar system is a collection of planets, moons, and small celestial bodies orbiting the Sun.',
       'image': 'assets/images/solarsystem.png',
-      'color': Colors.grey,
+      'color': Colors.blueAccent,
       'modelSrc': 'assets/models/solar_system.glb',
     },
     {
