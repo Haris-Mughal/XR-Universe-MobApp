@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 class ModelViewerScreen extends StatelessWidget {
-  const ModelViewerScreen({super.key});
+  final String modelSrc;
+  const ModelViewerScreen({
+    super.key,
+    required this.modelSrc,
+     });
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +14,12 @@ class ModelViewerScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Model Viewer'),
       ),
-      body: const ModelViewer(
-        backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
-        src: 'assets/sun.glb',
-        alt: 'A 3D model of an astronaut',
+      body: ModelViewer(
+        backgroundColor: const Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
+        src: modelSrc,
+        alt: "Planet's model",
         ar: true,
-        arModes: ['scene-viewer', 'webxr', 'quick-look'],
+        arModes: const ['scene-viewer', 'webxr', 'quick-look'],
         autoRotate: true,
         iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
         disableZoom: true,

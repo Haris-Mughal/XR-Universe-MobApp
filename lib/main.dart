@@ -32,6 +32,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'Mercury is the smallest planet in the Solar System and the closest to the Sun. It has no atmosphere to retain heat.',
       'image': 'assets/images/mercury.png',
       'color': Colors.grey,
+      'modelSrc': 'assets/models/mercury.glb',
     },
     {
       'title': 'Venus',
@@ -39,6 +40,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'Venus has a thick, toxic atmosphere that traps heat, making it the hottest planet in the Solar System.',
       'image': 'assets/images/venus.png',
       'color': Colors.orange,
+      'modelSrc': 'assets/models/venus.glb',
     },
     {
       'title': 'Earth',
@@ -46,6 +48,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'Earth is rounded into an ellipsoid with a circumference of about 40,000 km. It is the densest planet in the Solar System.',
       'image': 'assets/images/earth.png',
       'color': Colors.blue,
+      'modelSrc': 'assets/models/earth.glb',
     },
     {
       'title': 'Mars',
@@ -53,6 +56,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'The surface of Mars is orange-red because it is covered in iron oxide dust, giving it the nickname "The Red Planet".',
       'image': 'assets/images/mars.png',
       'color': Colors.red,
+      'modelSrc': 'assets/models/mars.glb',
     },
     {
       'title': 'Jupiter',
@@ -60,6 +64,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'Jupiter is the largest planet in the Solar System. It is known for its Great Red Spot, a massive storm.',
       'image': 'assets/images/jupiter.png',
       'color': Colors.brown,
+      'modelSrc': 'assets/models/jupiter.glb',
     },
     {
       'title': 'Saturn',
@@ -67,6 +72,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'The planet has a bright and extensive system of rings composed of ice particles.',
       'image': 'assets/images/saturn.png',
       'color': Colors.yellow,
+      'modelSrc': 'assets/models/saturn.glb',
     },
     {
       'title': 'Uranus',
@@ -74,6 +80,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'Uranus is a gas giant with a blue-green hue due to methane in its atmosphere. It rotates on its side.',
       'image': 'assets/images/uranus.png',
       'color': Colors.cyan,
+      'modelSrc': 'assets/models/uranus.glb',
     },
     {
       'title': 'Neptune',
@@ -81,6 +88,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'Neptune is the farthest planet from the Sun. It is known for its deep blue color and supersonic winds.',
       'image': 'assets/images/neptune.png',
       'color': Colors.blueAccent,
+      'modelSrc': 'assets/models/neptune.glb',
     },
     {
       'title': 'Sun',
@@ -88,6 +96,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
       'The Sun orbits the Galactic Center at a distance of 24,000 - 26,000 light-years. From Earth, it is about 8 light-minutes away.',
       'image': 'assets/images/sun.png',
       'color': Colors.orangeAccent,
+      'modelSrc': 'assets/models/sun.glb',
     },
   ];
   int _currentIndex = 0;
@@ -148,6 +157,7 @@ class _AstroExplorerScreenState extends State<AstroExplorerScreen> {
                   imagePath: planet['image']!,
                   color: planet['color']!,
                   isHighlighted: index == _currentIndex,
+                  modelSrc: planet['modelSrc']!,
                 );
               },
             ),
@@ -164,6 +174,9 @@ class AstroCard extends StatelessWidget {
   final String imagePath;
   final Color color;
   final bool isHighlighted;
+  final String modelSrc; // Add this line
+
+
 
   const AstroCard({
     super.key,
@@ -172,6 +185,7 @@ class AstroCard extends StatelessWidget {
     required this.imagePath,
     required this.color,
     required this.isHighlighted,
+    required this.modelSrc, // Add this line
   });
 
   @override
@@ -245,7 +259,7 @@ class AstroCard extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ModelViewerScreen(),
+                          builder: (context) => ModelViewerScreen(modelSrc: modelSrc),
                         ),
                       );
                     },
