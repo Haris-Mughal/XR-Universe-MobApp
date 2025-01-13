@@ -25,7 +25,7 @@ class ModelViewerScreen extends StatelessWidget {
               ),
             ),
             child: Container(
-              color: Colors.black.withOpacity(0.7), // Black overlay with 50% opacity
+              color: Colors.black.withAlpha(179), // Black overlay with 50% opacity
             ),
           ),
           // ModelViewer
